@@ -239,34 +239,34 @@ class ApplianceOvenRecipe:
 
 @dataclass
 class ApplianceFeatureReference:
-    strKeyRef: str
-    wifiArrayIndex: int
+    strKeyRef: str | None = None
+    wifiArrayIndex: int | None = None
 
 
 @dataclass
 class ApplianceProgramReference:
-    strKeyRef: str
-    wifiArrayIndex: int
+    strKeyRef: str | None = None
+    wifiArrayIndex: int | None = None
 
 
 @dataclass
 class ApplianceProgressFeatureReference:
-    hour: ApplianceFeatureReference
-    minute: ApplianceFeatureReference
-    strKeyRef: str
+    hour: ApplianceFeatureReference | None = None
+    minute: ApplianceFeatureReference | None = None
+    strKeyRef: str | None = None
 
 
 @dataclass
 class ApplianceProgressReference:
-    delay: ApplianceProgressFeature
-    duration: ApplianceProgressFeatureReference
-    remaining: ApplianceProgressFeature
+    delay: ApplianceProgressFeature | None = None
+    duration: ApplianceProgressFeatureReference | None = None
+    remaining: ApplianceProgressFeature | None = None
 
 
 @dataclass
 class ApplianceSubprogramReference:
-    strKeyRef: str
-    wifiArrayIndex: int
+    strKeyRef: str | None = None
+    wifiArrayIndex: int | None = None
 
 
 @dataclass
@@ -291,8 +291,8 @@ class ApplianceOvenStepCooking:
 
 @dataclass
 class OvenTemperatureInfo:
-    ovenTemperatureNotVisiblePrograms: str
-    ovenTemperatureSubprograms: ApplianceFeature
+    ovenTemperatureNotVisiblePrograms: str | list[str]
+    ovenTemperatureSubprograms: ApplianceFeature | list[ApplianceFeature]
 
 
 @dataclass
@@ -326,9 +326,9 @@ class ApplianceRemoteControl:
 
 @dataclass
 class ApplianceScreenSaver:
-    ovenScreenSaverTimer: ApplianceFeature
-    ovenStandByMode: ApplianceFeature
-    ovenStandByTimer: ApplianceFeature
+    ovenScreenSaverTimer: ApplianceFeature | None = None
+    ovenStandByMode: ApplianceFeature | None = None
+    ovenStandByTimer: ApplianceFeature | None = None
 
 
 @dataclass
